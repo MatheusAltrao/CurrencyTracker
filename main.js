@@ -35,6 +35,12 @@ fetch(`${local}`)
     const results = data.results
     const currencies = results.currencies
     const stocks = results.stocks
+    const taxes = results.taxes
+
+    console.log()
+
+
+    /* actions */
 
     cardTitle[0].innerHTML = stocks.IBOVESPA.name
     cardValue[0].innerHTML = stocks.IBOVESPA.variation + ' %'
@@ -43,45 +49,92 @@ fetch(`${local}`)
     cardValue[1].innerHTML = stocks.IFIX.variation + ' %'
 
 
-    /* actions */
+    cardTitle[2].innerHTML = 'NASDAQ'
+    cardValue[2].innerHTML = stocks.NASDAQ.variation + '%'
 
-    cardTitle[2].innerHTML = currencies.USD.name
-    cardValue[2].innerHTML = currencies.USD.buy.toFixed(2)
+    cardTitle[3].innerHTML = 'DOWJONES'
+    cardValue[3].innerHTML = stocks.DOWJONES.variation + '%'
 
-    cardTitle[3].innerHTML = currencies.CAD.name
-    cardValue[3].innerHTML = currencies.CAD.buy.toFixed(2)
+    cardTitle[4].innerHTML = 'CAC'
+    cardValue[4].innerHTML = stocks.CAC.variation + '%'
 
-    cardTitle[4].innerHTML = currencies.AUD.name
-    cardValue[4].innerHTML = currencies.AUD.buy.toFixed(2)
+    cardTitle[5].innerHTML = 'NIKKEI'
+    cardValue[5].innerHTML = stocks.NIKKEI.variation + '%'
 
-    cardTitle[5].innerHTML = currencies.EUR.name
-    cardValue[5].innerHTML = currencies.EUR.buy.toFixed(2)
 
-    cardTitle[6].innerHTML = currencies.ARS.name
-    cardValue[6].innerHTML = currencies.ARS.buy.toFixed(2)
+    /* coin */
 
-    cardTitle[7].innerHTML = currencies.JPY.name
-    cardValue[7].innerHTML = currencies.JPY.buy.toFixed(2)
+    cardTitle[6].innerHTML = currencies.USD.name
+    cardValue[6].innerHTML = 'R$' + currencies.USD.buy.toFixed(2)
 
-    cardTitle[8].innerHTML = currencies.GBP.name
-    cardValue[8].innerHTML = currencies.GBP.buy.toFixed(2)
+    cardTitle[7].innerHTML = 'R$' + currencies.CAD.name
+    cardValue[7].innerHTML = 'R$' + currencies.CAD.buy.toFixed(2)
 
-    cardTitle[9].innerHTML = currencies.CNY.name
-    cardValue[9].innerHTML = currencies.CNY.buy.toFixed(2)
+    cardTitle[8].innerHTML = 'R$' + currencies.AUD.name
+    cardValue[8].innerHTML = 'R$' + currencies.AUD.buy.toFixed(2)
 
-    cardTitle[10].innerHTML = currencies.BTC.name
-    cardValue[10].innerHTML = currencies.BTC.buy.toFixed(2)
+    cardTitle[9].innerHTML = 'R$' + currencies.EUR.name
+    cardValue[9].innerHTML = 'R$' + currencies.EUR.buy.toFixed(2)
+
+    cardTitle[10].innerHTML = 'R$' + currencies.ARS.name
+    cardValue[10].innerHTML = 'R$' + currencies.ARS.buy.toFixed(2)
+
+    cardTitle[11].innerHTML = 'R$' + currencies.JPY.name
+    cardValue[11].innerHTML = 'R$' + currencies.JPY.buy.toFixed(2)
+
+    cardTitle[12].innerHTML = 'R$' + currencies.GBP.name
+    cardValue[12].innerHTML = 'R$' + currencies.GBP.buy.toFixed(2)
+
+    cardTitle[13].innerHTML = 'R$' + currencies.CNY.name
+    cardValue[13].innerHTML = 'R$' + currencies.CNY.buy.toFixed(2)
+
+    cardTitle[14].innerHTML = 'R$' + currencies.BTC.name
+    cardValue[14].innerHTML = 'R$' + currencies.BTC.buy.toFixed(2)
+
+
+
+    /* rates */
+
+
+    cardTitle[15].innerHTML = 'CDI'
+    cardValue[15].innerHTML = taxes[0].cdi + '%'
+
+    cardTitle[16].innerHTML = 'Selic'
+    cardValue[16].innerHTML = taxes[0].selic + '%'
+
+
+    cardTitle[17].innerHTML = 'Daily Factor'
+    cardValue[17].innerHTML = taxes[0].daily_factor.toFixed(2)
+
+
+
+    cardValue.forEach((element) => {
+
+      const text = element.innerText
+      const value = parseFloat(text)
+
+      if (value < 0) {
+        element.classList.add('red')
+      }
+
+    })
 
   })
 
-const date = new Date(),
-  day = date.getDate().toString().padStart(2, '0'),
-  month = (date.getMonth() + 1).toString().padStart(2, '0'),
-  year = date.getFullYear();
+const date = new Date();
+
+let day = (date.getDate())
+let month = ((date.getMonth() + 1))
+let year = date.getFullYear()
+let hour = date.getHours()
+let minutes = date.getMinutes()
 
 const fullDate = day + '/' + month + '/' + year
 
+function addZero(time) {
+  return (time < 10) ? '0' + time : time;
+}
 
 const notification = document.querySelector('.notification')
-notification.innerHTML = 'Última atualização na data ' + fullDate + '  à 00:00h'
 
+notification.innerHTML = `Última atualização na data  ${addZero(day)}/${addZero(month)}/${addZero(year)}  às ${addZero(hour)}:${addZero(minutes)}`
