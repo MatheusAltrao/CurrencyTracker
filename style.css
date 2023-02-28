@@ -118,7 +118,7 @@ nav {
 }
 
 .logo {
-  margin-right: 3rem;
+  padding-right: 3rem;
 }
 
 
@@ -129,20 +129,24 @@ ul {
   gap: 1rem;
   width: 100%;
 
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(4px);
+
+
+
 
 }
 
 .logo img {
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 ul li a {
   color: #fff;
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
 
   transition: all 0.3s ease;
 }
@@ -284,8 +288,8 @@ ul li a {
 
   background-color: #04923f;
 
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
   border: none;
   color: #fff;
@@ -305,8 +309,8 @@ ul li a {
   transform: translateX(0);
 }
 
-.icon {
-  font-size: 1.2rem;
+.arrow {
+  font-size: 1.8rem;
 }
 
 .by {

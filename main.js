@@ -67,28 +67,28 @@ fetch(`${local}`)
     cardTitle[6].innerHTML = currencies.USD.name
     cardValue[6].innerHTML = 'R$' + currencies.USD.buy.toFixed(2)
 
-    cardTitle[7].innerHTML = 'R$' + currencies.CAD.name
+    cardTitle[7].innerHTML = currencies.CAD.name
     cardValue[7].innerHTML = 'R$' + currencies.CAD.buy.toFixed(2)
 
-    cardTitle[8].innerHTML = 'R$' + currencies.AUD.name
+    cardTitle[8].innerHTML = currencies.AUD.name
     cardValue[8].innerHTML = 'R$' + currencies.AUD.buy.toFixed(2)
 
-    cardTitle[9].innerHTML = 'R$' + currencies.EUR.name
+    cardTitle[9].innerHTML = currencies.EUR.name
     cardValue[9].innerHTML = 'R$' + currencies.EUR.buy.toFixed(2)
 
-    cardTitle[10].innerHTML = 'R$' + currencies.ARS.name
+    cardTitle[10].innerHTML = currencies.ARS.name
     cardValue[10].innerHTML = 'R$' + currencies.ARS.buy.toFixed(2)
 
-    cardTitle[11].innerHTML = 'R$' + currencies.JPY.name
+    cardTitle[11].innerHTML = currencies.JPY.name
     cardValue[11].innerHTML = 'R$' + currencies.JPY.buy.toFixed(2)
 
-    cardTitle[12].innerHTML = 'R$' + currencies.GBP.name
+    cardTitle[12].innerHTML = currencies.GBP.name
     cardValue[12].innerHTML = 'R$' + currencies.GBP.buy.toFixed(2)
 
-    cardTitle[13].innerHTML = 'R$' + currencies.CNY.name
+    cardTitle[13].innerHTML = currencies.CNY.name
     cardValue[13].innerHTML = 'R$' + currencies.CNY.buy.toFixed(2)
 
-    cardTitle[14].innerHTML = 'R$' + currencies.BTC.name
+    cardTitle[14].innerHTML = currencies.BTC.name
     cardValue[14].innerHTML = 'R$' + currencies.BTC.buy.toFixed(2)
 
 
