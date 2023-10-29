@@ -8,12 +8,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
 - CSS
+- API
 - JavaScript
+
 
 
 ## 🚧 Projeto - Em construção:
 
-Dashboard para acompanhar a cotação do dólar e outras moedas internacionais e virtuais.
+Dashboard para acompanhar a cotação do dólar e outras moedas internacionais e virtuais, e a requisição para api pode demorar alguns segundos, espero que goste!!
 
 ## 🎨 Design:
 
